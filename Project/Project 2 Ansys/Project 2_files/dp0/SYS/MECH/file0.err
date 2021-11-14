@@ -1,30 +1,30 @@
-/COM,ANSYS RELEASE 2021 R2           BUILD 21.2      UP20210601       15:55:07
+/COM,ANSYS RELEASE 2021 R2           BUILD 21.2      UP20210601       17:41:16
 
- *** WARNING ***                         CP =       0.562   TIME= 15:55:07
+ *** WARNING ***                         CP =       0.672   TIME= 17:41:20
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       0.562   TIME= 15:55:07
+ *** WARNING ***                         CP =       0.672   TIME= 17:41:20
  MPC184 elements are being used in the current analysis and the          
  NLGEOM,ON command has not been used.  Thus, only linearized behavior    
  will be considered.  If finite rotation and large deflection effects    
  are to be considered, please use the NLGEOM,ON command.                 
 
- *** WARNING ***                         CP =       0.562   TIME= 15:55:07
- Material number 14 (used by element 7320) should normally have at least 
+ *** WARNING ***                         CP =       0.734   TIME= 17:41:20
+ Material number 14 (used by element 9384) should normally have at least 
  one MP or one TB type command associated with it.  Output of energy by  
  material may not be available.                                          
 
- *** WARNING ***                         CP =       0.688   TIME= 15:55:07
+ *** WARNING ***                         CP =       1.484   TIME= 17:41:20
  Maximum friction coefficient 0.22 is defined in the model.  Switch to   
  the unsymmetric solver (NROP,UNSYM) instead if convergence difficulty   
  is encountered.                                                         
 
- *** WARNING ***                         CP =       1.344   TIME= 15:55:08
- For element 7320 the element connectivity is 0 and 6405.  The node      
+ *** WARNING ***                         CP =       1.953   TIME= 17:41:21
+ For element 9384 the element connectivity is 0 and 11673.  The node     
  which is identified as a 0 will be a grounded node.                     
 
- *** WARNING ***                         CP =       1.500   TIME= 15:55:08
+ *** WARNING ***                         CP =       2.406   TIME= 17:41:21
  Pivoting has been activated for the Distributed Sparse Matrix Solver .  
  The memory required may greatly exceed the predicted amount.  In that   
  event, use the DSPOPTION command to change the memory mode and/or       
