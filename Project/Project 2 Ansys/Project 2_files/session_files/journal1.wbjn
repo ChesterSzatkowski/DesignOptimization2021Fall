@@ -212,3 +212,4 @@ geometry1.Exit()
 Parameters.ExportDesignPoints(DesignPoints=[designPoint2])
 designPoint2.Retained = True
 Save(Overwrite=True)
+Save(Overwrite=True)
