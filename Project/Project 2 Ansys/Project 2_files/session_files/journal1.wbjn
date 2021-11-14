@@ -163,3 +163,52 @@ model1.Edit()
 model1.Exit()
 Update()
 Save(Overwrite=True)
+outputParameter5 = optimizationModel1.GetParameter(Name="P7")
+optimizationCriterion8 = outputParameter5.CreateOptimizationCriterion()
+optimizationCriterion8.ObjectiveType = "GT_MinimumPossible"
+optimizationCriterion7.ObjectiveType = "GT_MinimumPossible"
+optimizationCriterion5.ObjectiveType = "GT_MinimumPossible"
+optimizationCriterion4.ObjectiveType = "GT_MinimumPossible"
+model1.Edit()
+Save(Overwrite=True)
+model1.Exit()
+optimizationModel1.DeleteOptimizationCriteria(OptimizationCriteria=[optimizationCriterion8])
+designofExperimentComponent1.Update(AllDependencies=True)
+responseSurfaceComponent1.Update(AllDependencies=True)
+Save(Overwrite=True)
+optimizationCriterion4.ObjectiveType = "GT_MaximumPossible"
+optimizationCriterion4.ObjectiveTargetValue = 10000
+outputParameter6 = optimizationModel1.GetParameter(Name="P7")
+optimizationCriterion9 = outputParameter6.CreateOptimizationCriterion()
+optimizationCriterion9.ObjectiveType = "GT_MinimumPossible"
+optimizationModel1.DeleteOptimizationCriteria(OptimizationCriteria=[optimizationCriterion3])
+optimizationModel1.DeleteOptimizationCriteria(OptimizationCriteria=[optimizationCriterion2])
+optimizationModel1.DeleteOptimizationCriteria(OptimizationCriteria=[optimizationCriterion1])
+optimizationComponent1 = system6.GetComponent(Name="Optimization")
+optimizationComponent1.Update(AllDependencies=True)
+candidatePoint1 = optimizationModel1.GetCandidatePoint(Name="CandidatePoint 1")
+optimizationModel1.SetVariationReferencePoint(
+    Point=candidatePoint1,
+    Source="ResponseSurface")
+geometry1.Edit()
+geometry1.Exit()
+candidatePoint2 = optimizationModel1.GetCandidatePoint(Name="CandidatePoint")
+optimizationModel1.SetVariationReferencePoint(
+    Point=candidatePoint2,
+    Source="ResponseSurface")
+optimizationModel1.SetVariationReferencePoint(
+    Point=candidatePoint1,
+    Source="ResponseSurface")
+designPoint1 = Parameters.GetDesignPoint(Name="0")
+designPoint2 = designPoint1.Duplicate()
+designPoint2.SetEntityProperties(Properties=Set(Retained=False, Exported=False, UpdateOrder=0, Note="Created from Optimization / Candidate Point 2"))
+parameter1 = Parameters.GetParameter(Name="P1")
+parameter2 = Parameters.GetParameter(Name="P2")
+parameter3 = Parameters.GetParameter(Name="P3")
+designPoint2.SetParameterExpressions(ParameterExpressions={parameter1: "22.275796352611444 [mm]", parameter2: "124.04346024922744 [mm]", parameter3: "89.950688370294159 [mm]"})
+backgroundSession1 = UpdateAllDesignPoints(DesignPoints=[designPoint2])
+geometry1.Edit()
+geometry1.Exit()
+Parameters.ExportDesignPoints(DesignPoints=[designPoint2])
+designPoint2.Retained = True
+Save(Overwrite=True)

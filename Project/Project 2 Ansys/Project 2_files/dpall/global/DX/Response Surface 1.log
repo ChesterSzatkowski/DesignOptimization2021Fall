@@ -39,7 +39,7 @@ Generation 12
 
 Rank = 1 , Kriging
  member 0, weight = 1, Kriging, Kernel Type = Gaussian, Kernel Variation Type = Isotropic, Regression Type = Full Quadratic
- GOFs: RMSE = 2.76232e-08, PRESS_RMSE = 7.90111e-07, PRESS_R2 = 1, PRESS_RMAE = 0.00124303, PRESS_RAAE = 0.000242954
+ GOFs: RMSE = 3.83656, PRESS_RMSE = 109.738, PRESS_R2 = 1, PRESS_RMAE = 0.00124303, PRESS_RAAE = 0.000242954
 
 
 

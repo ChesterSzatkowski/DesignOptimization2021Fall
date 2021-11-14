@@ -1,0 +1,211 @@
+# encoding: utf-8
+# 2021 R2
+SetScriptVersion(Version="21.2.209")
+ImportFile(FilePath="C:/Users/CJ/PycharmProjects/DesignOptimization2021Fall/Project/tutorial_ansys/brake.agdb")
+template1 = GetTemplate(
+    TemplateName="Static Structural",
+    Solver="ANSYS")
+system1 = GetSystem(Name="Geometry")
+system2 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+geometryComponent1 = system2.GetComponent(Name="Geometry")
+geometryComponent2 = system1.GetComponent(Name="Geometry")
+geometryComponent1.ReplaceWithShare(
+    TargetSystem=system2,
+    ComponentToShare=geometryComponent2,
+    SourceSystem=system1)
+favorites1 = EngData.LoadFavoriteItems()
+library1 = EngData.OpenLibrary(
+    Name="General Materials",
+    Source="General_Materials.xml")
+engineeringData1 = system2.GetContainer(ComponentName="Engineering Data")
+matl1 = engineeringData1.ImportMaterial(
+    Name="Gray Cast Iron",
+    Source="General_Materials.xml")
+modelComponent1 = system2.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system2.GetContainer(ComponentName="Model")
+model1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+model1.Exit()
+Save(Overwrite=True)
+template2 = GetTemplate(
+    TemplateName="Modal",
+    Solver="ANSYS")
+engineeringDataComponent1 = system2.GetComponent(Name="Engineering Data")
+system3 = template2.CreateSystem(
+    ComponentsToShare=[engineeringDataComponent1, geometryComponent1],
+    Position="Right",
+    RelativeTo=system2)
+modelComponent2 = system3.GetComponent(Name="Model")
+modelComponent2.Refresh()
+model2 = system3.GetContainer(ComponentName="Model")
+model2.Edit()
+model2.Exit()
+model1.Edit()
+model1.Exit()
+Save(Overwrite=True)
+template3 = GetTemplate(
+    TemplateName="Transient Thermal",
+    Solver="ANSYS")
+system4 = template3.CreateSystem(
+    ComponentsToShare=[engineeringDataComponent1, geometryComponent1],
+    Position="Below",
+    RelativeTo=system3)
+system4.Move(
+    Position="Right",
+    RelativeTo=system3)
+modelComponent3 = system4.GetComponent(Name="Model")
+modelComponent3.Refresh()
+model3 = system4.GetContainer(ComponentName="Model")
+model3.Edit()
+Save(Overwrite=True)
+model3.Exit()
+model2.Edit()
+model2.Exit()
+Save(Overwrite=True)
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Exit()
+model1.Edit()
+model1.Exit()
+geometry1.Edit()
+geometry1.Exit()
+Save(Overwrite=True)
+template4 = GetTemplate(TemplateName="Response Surface")
+system5 = template4.CreateSystem()
+designofExperiment1 = system5.GetContainer(ComponentName="Design of Experiment")
+dOEModel1 = designofExperiment1.GetModel()
+cCDMethod1 = dOEModel1.Method
+cCDMethod1.CCDType = "CCDTYPE_FACE_CENT"
+cCDMethod1.CCDTemplateType = "CCD_ENHANCED_TEMPLATE"
+inputParameter1 = dOEModel1.GetParameter(Name="P3")
+inputParameter1.LowerBound = 66
+inputParameter1.UpperBound = 90
+designPointsTable1 = dOEModel1.PreviewDesignPoints()
+geometry1.Edit()
+geometry1.Exit()
+model1.Edit()
+model1.Exit()
+Save(Overwrite=True)
+geometry1.Edit()
+geometry1.Exit()
+geometry1.Edit()
+geometry1.Exit()
+inputParameter2 = dOEModel1.GetParameter(Name="P2")
+inputParameter2.UpperBound = 160
+inputParameter2.LowerBound = 124
+geometry1.Edit()
+geometry1.Exit()
+Save(Overwrite=True)
+geometry1.Edit()
+geometry1.Exit()
+designofExperimentComponent1 = system5.GetComponent(Name="Design of Experiment")
+designofExperimentComponent1.Update(AllDependencies=True)
+Save(Overwrite=True)
+responseSurface1 = system5.GetContainer(ComponentName="Response Surface")
+responseSurfaceModel1 = responseSurface1.GetModel()
+responseSurfaceModel1.GenerateVerificationPoints = True
+responseSurfaceModel1.NumberVerificationPoints = 2
+responseSurfaceModel1.FittingType = "FITTINGTYPE_SRS"
+responseSurfaceComponent1 = system5.GetComponent(Name="Response Surface")
+responseSurfaceComponent1.Update(AllDependencies=True)
+responsePoint1 = responseSurfaceModel1.CreateResponsePoint(DisplayText="Response Point")
+responsePoint2 = responseSurfaceModel1.DuplicateResponsePoint(
+    ResponsePoint=responsePoint1,
+    DuplicateCharts=True)
+responsePoint2.Update(Force=True)
+responseSurfaceModel1.DeleteResponsePoints(ResponsePoints=[responsePoint1])
+responseSurfaceModel1.DeleteResponsePoints(ResponsePoints=[responsePoint2])
+chart1 = responseSurfaceModel1.GetChart(Name="LocalSensitivityCurves")
+outputParameter1 = responseSurfaceModel1.GetParameter(Name="P5")
+chart1.AssociateParameterToAxis(
+    Parameter=outputParameter1,
+    Axis="YAxis")
+inputParameter3 = dOEModel1.GetParameter(Name="P1")
+inputParameter3.LowerBound = 15
+inputParameter3.UpperBound = 25
+system5.Update(AllDependencies=True)
+template5 = GetTemplate(TemplateName="Response Surface Optimization")
+system6 = template5.CreateSystem(
+    ComponentsToShare=[designofExperimentComponent1],
+    Position="Right",
+    RelativeTo=system5)
+optimization1 = system6.GetContainer(ComponentName="Optimization")
+optimizationModel1 = optimization1.GetModel()
+optimizationModel1.MethodSelection = "OMS_Manual"
+optimizationModel1.MethodSelection = "OMS_Auto"
+inputParameter4 = optimizationModel1.GetParameter(Name="P1")
+optimizationCriterion1 = inputParameter4.CreateOptimizationCriterion()
+inputParameter5 = optimizationModel1.GetParameter(Name="P2")
+optimizationCriterion2 = inputParameter5.CreateOptimizationCriterion()
+inputParameter6 = optimizationModel1.GetParameter(Name="P3")
+optimizationCriterion3 = inputParameter6.CreateOptimizationCriterion()
+outputParameter2 = optimizationModel1.GetParameter(Name="P4")
+optimizationCriterion4 = outputParameter2.CreateOptimizationCriterion()
+outputParameter3 = optimizationModel1.GetParameter(Name="P5")
+optimizationCriterion5 = outputParameter3.CreateOptimizationCriterion()
+outputParameter4 = optimizationModel1.GetParameter(Name="P6")
+optimizationCriterion6 = outputParameter4.CreateOptimizationCriterion()
+optimizationCriterion6.ObjectiveType = "GT_MinimumPossible"
+optimizationCriterion6.ConstraintType = "CT_LessThanTarget"
+optimizationCriterion6.ConstraintType = "CT_NoPreference"
+optimizationCriterion6.ObjectiveTargetValue = 40
+optimizationModel1.DeleteOptimizationCriteria(OptimizationCriteria=[optimizationCriterion6])
+optimizationCriterion7 = outputParameter4.CreateOptimizationCriterion()
+geometry1.Edit()
+geometry1.Exit()
+model1.Edit()
+model1.Exit()
+model1.Edit()
+model1.Exit()
+Update()
+Save(Overwrite=True)
+outputParameter5 = optimizationModel1.GetParameter(Name="P7")
+optimizationCriterion8 = outputParameter5.CreateOptimizationCriterion()
+optimizationCriterion8.ObjectiveType = "GT_MinimumPossible"
+optimizationCriterion7.ObjectiveType = "GT_MinimumPossible"
+optimizationCriterion5.ObjectiveType = "GT_MinimumPossible"
+optimizationCriterion4.ObjectiveType = "GT_MinimumPossible"
+model1.Edit()
+Save(Overwrite=True)
+model1.Exit()
+optimizationModel1.DeleteOptimizationCriteria(OptimizationCriteria=[optimizationCriterion8])
+designofExperimentComponent1.Update(AllDependencies=True)
+responseSurfaceComponent1.Update(AllDependencies=True)
+Save(Overwrite=True)
+optimizationCriterion4.ObjectiveType = "GT_MaximumPossible"
+optimizationCriterion4.ObjectiveTargetValue = 10000
+outputParameter6 = optimizationModel1.GetParameter(Name="P7")
+optimizationCriterion9 = outputParameter6.CreateOptimizationCriterion()
+optimizationCriterion9.ObjectiveType = "GT_MinimumPossible"
+optimizationModel1.DeleteOptimizationCriteria(OptimizationCriteria=[optimizationCriterion3])
+optimizationModel1.DeleteOptimizationCriteria(OptimizationCriteria=[optimizationCriterion2])
+optimizationModel1.DeleteOptimizationCriteria(OptimizationCriteria=[optimizationCriterion1])
+optimizationComponent1 = system6.GetComponent(Name="Optimization")
+optimizationComponent1.Update(AllDependencies=True)
+candidatePoint1 = optimizationModel1.GetCandidatePoint(Name="CandidatePoint 1")
+optimizationModel1.SetVariationReferencePoint(
+    Point=candidatePoint1,
+    Source="ResponseSurface")
+geometry1.Edit()
+geometry1.Exit()
+candidatePoint2 = optimizationModel1.GetCandidatePoint(Name="CandidatePoint")
+optimizationModel1.SetVariationReferencePoint(
+    Point=candidatePoint2,
+    Source="ResponseSurface")
+optimizationModel1.SetVariationReferencePoint(
+    Point=candidatePoint1,
+    Source="ResponseSurface")
+designPoint1 = Parameters.GetDesignPoint(Name="0")
+designPoint2 = designPoint1.Duplicate()
+designPoint2.SetEntityProperties(Properties=Set(Retained=False, Exported=False, UpdateOrder=0, Note="Created from Optimization / Candidate Point 2"))
+parameter1 = Parameters.GetParameter(Name="P1")
+parameter2 = Parameters.GetParameter(Name="P2")
+parameter3 = Parameters.GetParameter(Name="P3")
+designPoint2.SetParameterExpressions(ParameterExpressions={parameter1: "22.275796352611444 [mm]", parameter2: "124.04346024922744 [mm]", parameter3: "89.950688370294159 [mm]"})
+backgroundSession1 = UpdateAllDesignPoints(DesignPoints=[designPoint2])
+geometry1.Edit()
+geometry1.Exit()
