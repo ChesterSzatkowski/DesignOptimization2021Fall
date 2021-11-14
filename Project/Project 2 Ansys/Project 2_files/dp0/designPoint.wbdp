@@ -34,7 +34,7 @@
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">1811</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 15758, "Input": 1809, "Output": 1809}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 40053, "Input": 1809, "Output": 1809}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <unique-system-dir valType="String">Geom</unique-system-dir>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
@@ -747,7 +747,7 @@
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">6879</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 15491, "Input": 6878, "Output": 6878}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 38800, "Input": 6878, "Output": 6878}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <last-update-regen-times valType="String">{"Preferences": 0, "ToolbarExp": 0, "FileTypesContainer": 0, "FileContainer": 0, "Messages": 0, "Scopes": 0, "Parameters": 0, "Schematic": 0, "ReportDataContainer": 0, "Graphics": 0, "Units": 0, "DpdbContainer": 0, "Geometry": 1811, "Engineering Data": 5731, "EngineeringDataGeneratedChartData": 0, "EngineeringDataCurveFit": 0, "EngineeringDataFavoriteItems": 0, "General Materials": 0, "Model": 6002, "Setup": 6055, "Solution": 6056, "Results": 6063, "Model 1": 6487, "Setup 1": 6498, "Solution 1": 6499, "Results 1": 6500, "Model 2": 6437, "Setup 2": 6473, "Solution 2": 6474, "Results 2": 6475, "Design of Experiment": 6856, "DXDesign of ExperimentEvaluateContainer": 0, "Response Surface": 0, "DXResponse SurfaceEvaluateContainer": 0}</last-update-regen-times>
       <unique-system-dir valType="String">SYS</unique-system-dir>
@@ -842,6 +842,19 @@
           <ParameterValueModified valType="String">False</ParameterValueModified>
           <AttachType valType="String">0</AttachType>
           <value-keys valType="String">{"File": System.String, "FilePath": System.String, "AttentionRequired": System.Boolean, "IsModifiedDueToModelAssemblyPropertyChange": System.Boolean, "IsModifiedDueToExternalModelPropertyChange": System.Boolean, "IsModifiedDueToDesignPointSwitchDataChange": System.Boolean, "ParameterValueModified": System.Boolean, "AttachType": System.Int32}</value-keys>
+        </custom-data>
+      </Object>
+      <Object Name="/Model/ParameterAdapter1:2dd948ea-d279-4a63-8ce3-49270b10083c" Version="1.0">
+        <class-type valType="String">Ansys.Simulation.Core.DataModel.Parameters.DynamicParameterObject, Ans.Simulation.Core</class-type>
+        <type-spec valType="String">{"SpecType": "Ansys.Core.DataModel.DataObjects.ParameterAdapterTypeSpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Exposure": "System", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Input", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "JournalVariableName": "parameterAdapter1", "Methods": {}, "Version": 1, "Members": {"DisplayText": {"SpecType": "Ansys.Core.DataSpecs.StringSpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Label": "Display Text", "Usage": "Extrinsic", "IsDesignPointInvariant": False, "IsParameterizable": False, "ReuseJournalVariables": True}, "Value": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "0.00717602593932981 [tonne]", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Output", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Mass"}, "WorkbenchParameterId": {"SpecType": "Ansys.Core.DataSpecs.StringSpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Extrinsic", "IsDesignPointInvariant": False, "IsParameterizable": False, "ReuseJournalVariables": False}, "Access": {"SpecType": "Ansys.Core.DataSpecs.EnumSpec`1[[Ansys.Simulation.Core.DataModel.Parameters.ParameterAccess, Ans.Simulation.Core]], Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "SimulationParameterInput", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Extrinsic", "IsDesignPointInvariant": False, "IsParameterizable": False, "ReuseJournalVariables": False, "OptionLabels": "SimulationParameterInput, SimulationParameterOutput", "ShouldTranslateOptionLabels": True}, "Type": {"SpecType": "Ansys.Core.DataSpecs.EnumSpec`1[[Ansys.Simulation.Core.DataModel.Parameters.ParameterType, Ans.Simulation.Core]], Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "SimulationParameterDouble", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Extrinsic", "IsDesignPointInvariant": False, "IsParameterizable": False, "ReuseJournalVariables": False, "OptionLabels": "SimulationParameterDouble, SimulationParameterInteger, SimulationParameterString, SimulationParameterBool, SimulationParameterStringOption", "ShouldTranslateOptionLabels": True}, "Name": {"SpecType": "Ansys.Core.DataSpecs.StringSpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Extrinsic", "IsDesignPointInvariant": False, "IsParameterizable": False, "ReuseJournalVariables": False}, "FolderDSId": {"SpecType": "Ansys.Core.DataSpecs.IntegerSpec`1[[System.Int32, mscorlib]], Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": -1, "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Extrinsic", "IsDesignPointInvariant": False, "IsParameterizable": False, "ReuseJournalVariables": False, "UndefinedValue": 2147483647}, "FrameworkParameterReference": {"SpecType": "Ansys.Core.DataModel.DataReferenceSpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Extrinsic", "IsDesignPointInvariant": False, "IsParameterizable": False, "ReuseJournalVariables": False}}, "DataTypeHierarchy": "ParameterAdapter1,ParameterAdapter,DataEntity"}</type-spec>
+        <object-name valType="String">2dd948ea-d279-4a63-8ce3-49270b10083c</object-name>
+        <member-data valType="String">{"DisplayText": "2dd948ea-d279-4a63-8ce3-49270b10083c", "Value": "0.00717602593932981 [tonne]", "WorkbenchParameterId": "2dd948ea-d279-4a63-8ce3-49270b10083c", "Access": "SimulationParameterOutput", "Type": "SimulationParameterDouble", "Name": "Solid Mass", "FolderDSId": 12, "FrameworkParameterReference": $$9954ebb4-b9cb-48a9-b737-a8e4a9044288}</member-data>
+        <custom-data>
+          <ParamDataRef valType="String">9954ebb4-b9cb-48a9-b737-a8e4a9044288</ParamDataRef>
+          <IsParameterValueModified valType="String">False</IsParameterValueModified>
+          <value-keys valType="String">{"ParamDataRef": System.String, "IsParameterValueModified": System.Boolean}</value-keys>
+          <dictionary-keys valType="String">[Attributes]</dictionary-keys>
+          <Attributes />
         </custom-data>
       </Object>
     </Container>
@@ -1077,7 +1090,7 @@
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">6487</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 15493, "Input": 6486, "Output": 6486}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 38802, "Input": 6486, "Output": 6486}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <last-update-regen-times valType="String">{"Preferences": 0, "ToolbarExp": 0, "FileTypesContainer": 0, "FileContainer": 0, "Messages": 0, "Scopes": 0, "Parameters": 0, "Schematic": 0, "ReportDataContainer": 0, "Graphics": 0, "Units": 0, "DpdbContainer": 0, "Geometry": 1811, "Engineering Data": 5731, "EngineeringDataGeneratedChartData": 0, "EngineeringDataCurveFit": 0, "EngineeringDataFavoriteItems": 0, "General Materials": 0, "Model": 6002, "Setup": 6055, "Solution": 6056, "Results": 6063, "Model 1": 0, "Setup 1": 0, "Solution 1": 0, "Results 1": 0, "Model 2": 6437, "Setup 2": 6473, "Solution 2": 6474, "Results 2": 6475}</last-update-regen-times>
       <unique-system-dir valType="String">SYS-1</unique-system-dir>
@@ -1407,7 +1420,7 @@
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">6437</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 15495, "Input": 6436, "Output": 6436}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 38804, "Input": 6436, "Output": 6436}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <last-update-regen-times valType="String">{"Preferences": 0, "ToolbarExp": 0, "FileTypesContainer": 0, "FileContainer": 0, "Messages": 0, "Scopes": 0, "Parameters": 0, "Schematic": 0, "ReportDataContainer": 0, "Graphics": 0, "Units": 0, "DpdbContainer": 0, "Geometry": 1811, "Engineering Data": 5731, "EngineeringDataGeneratedChartData": 0, "EngineeringDataCurveFit": 0, "EngineeringDataFavoriteItems": 0, "General Materials": 0, "Model": 6002, "Setup": 6055, "Solution": 6056, "Results": 6063, "Model 1": 0, "Setup 1": 0, "Solution 1": 0, "Results 1": 0, "Model 2": 0, "Setup 2": 0, "Solution 2": 0, "Results 2": 0}</last-update-regen-times>
       <unique-system-dir valType="String">SYS-2</unique-system-dir>
