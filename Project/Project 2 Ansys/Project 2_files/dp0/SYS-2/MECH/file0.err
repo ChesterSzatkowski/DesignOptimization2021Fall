@@ -1,0 +1,35 @@
+/COM,ANSYS RELEASE 2021 R2           BUILD 21.2      UP20210601       17:16:52
+
+ *** WARNING ***                         CP =       0.312   TIME= 17:16:53
+ Temperature-dependent properties have not been specified.  The          
+ THOPT,QUASI option does not perform equilibrium iterations.  Small      
+ time steps may be required to obtain accurate results.                  
+
+ *** WARNING ***                         CP =       0.438   TIME= 17:16:53
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       0.438   TIME= 17:16:53
+ Material number 2 (used by element 4771) should normally have at least  
+ one MP or one TB type command associated with it.  Output of energy by  
+ material may not be available.                                          
+
+ *** WARNING ***                         CP =       1.781   TIME= 17:16:53
+ Material number 2 (used by element 4771) should normally have at least  
+ one MP or one TB type command associated with it.  Output of energy by  
+ material may not be available.                                          
+
+ *** WARNING ***                         CP =       2.422   TIME= 17:16:54
+ Material number 2 (used by element 4771) should normally have at least  
+ one MP or one TB type command associated with it.  Output of energy by  
+ material may not be available.                                          
+
+ *** WARNING ***                         CP =       3.031   TIME= 17:16:55
+ Material number 2 (used by element 4771) should normally have at least  
+ one MP or one TB type command associated with it.  Output of energy by  
+ material may not be available.                                          
+
+ *** WARNING ***                         CP =       3.656   TIME= 17:16:55
+ Material number 2 (used by element 4771) should normally have at least  
+ one MP or one TB type command associated with it.  Output of energy by  
+ material may not be available.                                          
