@@ -209,3 +209,7 @@ designPoint2.SetParameterExpressions(ParameterExpressions={parameter1: "22.27579
 backgroundSession1 = UpdateAllDesignPoints(DesignPoints=[designPoint2])
 geometry1.Edit()
 geometry1.Exit()
+Parameters.ExportDesignPoints(DesignPoints=[designPoint2])
+designPoint2.Retained = True
+Save(Overwrite=True)
+Save(Overwrite=True)

@@ -42,9 +42,10 @@ dp1/SYS-2/MECH/MatML.xml
 dp1/SYS-2/MECH/solve.out
 dp1/act.dat
 dp1/designPoint.wbdp
-dpall/global/DX/Response Surface 1.log
+dpall/global/DX/dscache.dxdb
 session_files/journal1.wbjn
 session_files/journal2.wbjn
+session_files/journal3.wbjn
 dp1/
 dpall/
 session_files/

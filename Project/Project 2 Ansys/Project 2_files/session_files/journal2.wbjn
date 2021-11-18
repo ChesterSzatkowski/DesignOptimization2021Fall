@@ -1,0 +1,59 @@
+# encoding: utf-8
+# 2021 R2
+SetScriptVersion(Version="21.2.209")
+system1 = GetSystem(Name="RSO")
+optimization1 = system1.GetContainer(ComponentName="Optimization")
+optimizationModel1 = optimization1.GetModel()
+optimizationModel1.MethodSelection = "OMS_Manual"
+optimizationModel1.MethodSelection = "OMS_Auto"
+optimizationModel1.MethodSelection = "OMS_Manual"
+mOGAOptimization1 = optimizationModel1.Method
+mOGAOptimization1.MaxNumIterations = 40
+mOGAOptimization1.NumSamplesPerIter = 750
+optimizationComponent1 = system1.GetComponent(Name="Optimization")
+optimizationComponent1.Update(AllDependencies=True)
+candidatePoint1 = optimizationModel1.GetCandidatePoint(Name="CandidatePoint 1")
+optimizationModel1.SetVariationReferencePoint(
+    Point=candidatePoint1,
+    Source="ResponseSurface")
+mOGAOptimization1.MaxNumIterations = 100
+mOGAOptimization1.StabilityCriterion = 1
+optimizationModel1.VerifyCandidatePoints = True
+optimizationComponent1.Update(AllDependencies=True)
+inputParameter1 = optimizationModel1.GetParameter(Name="P1")
+optimizationCriterion1 = inputParameter1.GetOptimizationCriterion()
+optimizationCriterion1.UpperBound = 24
+mOGAOptimization1.MaxNumIterations = 150
+mOGAOptimization1.MaxNumIterations = 100
+mOGAOptimization1.MaxNumIterations = 150
+optimizationComponent1.Update(AllDependencies=True)
+designPoint1 = Parameters.GetDesignPoint(Name="0")
+designPoint2 = designPoint1.Duplicate()
+designPoint2.SetEntityProperties(Properties=Set(Retained=False, Exported=False, UpdateOrder=0, Note="Created from Optimization / Candidate Point 3"))
+parameter1 = Parameters.GetParameter(Name="P1")
+parameter2 = Parameters.GetParameter(Name="P2")
+parameter3 = Parameters.GetParameter(Name="P3")
+designPoint2.SetParameterExpressions(ParameterExpressions={parameter1: "22.409170837888261 [mm]", parameter2: "124.04527404630704 [mm]", parameter3: "89.815973037924451 [mm]"})
+backgroundSession1 = UpdateAllDesignPoints(DesignPoints=[designPoint2])
+designPoint3 = Parameters.GetDesignPoint(Name="1")
+designPoint3.Delete()
+Parameters.ExportDesignPoints(DesignPoints=[designPoint2])
+optimizationModel1.VerifyCandidatePoints = False
+system2 = GetSystem(Name="RSR")
+designofExperiment1 = system2.GetContainer(ComponentName="Design of Experiment")
+dOEModel1 = designofExperiment1.GetModel()
+dOEModel1.MethodName = "ANSYS_LHS"
+designofExperimentComponent1 = system2.GetComponent(Name="Design of Experiment")
+designofExperimentComponent1.Update(AllDependencies=True)
+responseSurfaceComponent1 = system2.GetComponent(Name="Response Surface")
+responseSurfaceComponent1.Update(AllDependencies=True)
+responseSurfaceComponent2 = system1.GetComponent(Name="Response Surface")
+responseSurfaceComponent2.Update(AllDependencies=True)
+optimizationComponent1.Update(AllDependencies=True)
+designPoint2.Delete()
+designPoint4 = designPoint1.Duplicate()
+designPoint4.SetEntityProperties(Properties=Set(Retained=False, Exported=False, UpdateOrder=0, Note="Created from Optimization / Candidate Point 3"))
+designPoint4.SetParameterExpressions(ParameterExpressions={parameter1: "17.945721524542275 [mm]", parameter2: "124.00242439265054 [mm]", parameter3: "66.60228329677004 [mm]"})
+backgroundSession2 = UpdateAllDesignPoints(DesignPoints=[designPoint4])
+Parameters.ExportDesignPoints(DesignPoints=[designPoint4])
+Save(Overwrite=True)

@@ -3,10 +3,9 @@ ________________________________________________________________________________
 __________________________________________________________________________________________________________________________________
 Generation 12
 
-Rank = 1 ,  Ensemble Genome , 2 Members :
- member 0, weight = 0.6638,  Kriging, Kernel Type = Matern 5/2, Kernel Variation Type = Anisotropic, Regression Type = Linear
- member 1, weight = 0.3362, Polynomial Regression, Polynomial Type = Full Quadratic, Output Transformation Type = Yeo-Johnson, Confidence Level = 0.05
- GOFs: RMSE = 4.35346, PRESS_RMSE = 15.9389, PRESS_R2 = 0.993288, PRESS_RMAE = 0.198794, PRESS_RAAE = 0.0564189
+Rank = 1 , Polynomial Regression
+ member 0, weight = 1,Polynomial Regression, Polynomial Type = Full Quadratic, Output Transformation Type = Yeo-Johnson, Confidence Level = 0.05
+ GOFs: RMSE = 0.71669, PRESS_RMSE = 6.76572, PRESS_R2 = 0.998617, PRESS_RMAE = 0.112588, PRESS_RAAE = 0.0218794
 
 
 
@@ -15,9 +14,13 @@ ________________________________________________________________________________
 __________________________________________________________________________________________________________________________________
 Generation 12
 
-Rank = 1 , Kriging
- member 0, weight = 1, Kriging, Kernel Type = Thin Plate Spline, Kernel Variation Type = Anisotropic, Regression Type = Linear
- GOFs: RMSE = 2.42317e-07, PRESS_RMSE = 1.77015, PRESS_R2 = 0.749311, PRESS_RMAE = 1.21046, PRESS_RAAE = 0.399454
+Rank = 1 ,  Ensemble Genome , 5 Members :
+ member 0, weight = 0.004658, Moving Least Squares, Weighting Function Type = Rational, Polynomial Type = Full Quadratic
+ member 1, weight = 0.20992, Support Vector Regression, Epsilon Value = 0.157743, Support Vector Kernel Type = Gaussian, Loss Function Type = Laplace
+ member 2, weight = 0.38995,  Kriging, Kernel Type = Thin Plate Spline, Kernel Variation Type = Isotropic, Regression Type = Linear
+ member 3, weight = 0.3908,  Kriging, Kernel Type = Matern 5/2, Kernel Variation Type = Isotropic, Regression Type = Linear
+ member 4, weight = 0.004678, Moving Least Squares, Weighting Function Type = Wend Land, Polynomial Type = Full Quadratic
+ GOFs: RMSE = 0.103224, PRESS_RMSE = 4.91432, PRESS_R2 = 0, PRESS_RMAE = 2.15085, PRESS_RAAE = 1.00868
 
 
 
@@ -28,7 +31,7 @@ Generation 12
 
 Rank = 1 , Polynomial Regression
  member 0, weight = 1,Polynomial Regression, Polynomial Type = Pure Quadratic, Output Transformation Type = Box-Cox, Confidence Level = 0.05
- GOFs: RMSE = 1.06679, PRESS_RMSE = 1.34124, PRESS_R2 = 0.996877, PRESS_RMAE = 0.135253, PRESS_RAAE = 0.0421434
+ GOFs: RMSE = 1.30337, PRESS_RMSE = 2.2423, PRESS_R2 = 0.988277, PRESS_RMAE = 0.225907, PRESS_RAAE = 0.0853639
 
 
 
@@ -37,9 +40,9 @@ ________________________________________________________________________________
 __________________________________________________________________________________________________________________________________
 Generation 12
 
-Rank = 1 , Kriging
- member 0, weight = 1, Kriging, Kernel Type = Gaussian, Kernel Variation Type = Isotropic, Regression Type = Full Quadratic
- GOFs: RMSE = 3.83656, PRESS_RMSE = 109.738, PRESS_R2 = 1, PRESS_RMAE = 0.00124303, PRESS_RAAE = 0.000242954
+Rank = 1 , Polynomial Regression
+ member 0, weight = 1,Polynomial Regression, Polynomial Type = Full Quadratic, Output Transformation Type = Yeo-Johnson, Confidence Level = 0.05
+ GOFs: RMSE = 35.2536, PRESS_RMSE = 405.416, PRESS_R2 = 0.999997, PRESS_RMAE = 0.00536068, PRESS_RAAE = 0.000897649
 
 
 
