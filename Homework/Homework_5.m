@@ -82,7 +82,7 @@ function solution = mysqp(f, df, g, dg, x0, opt)
         else
             % Solve the QP subproblem to find s and mu (using MATLAB's solver)
             qpalg = optimset('Algorithm', 'active-set', 'Display', 'off');
-            [s,~,~,~,lambda] = quadprog(W,[df(x)]',dg(x),-g(x),[], [], [], [], [],x0,  qpalg);
+            [s,~,~,~,lambda] = quadprog(W,[df(x)]',dg(x),-g(x),[], [], [], [], x0, qpalg);
             mu_new = lambda.ineqlin;
         end
         
