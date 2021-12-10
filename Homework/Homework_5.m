@@ -4,7 +4,7 @@
 %Modification by Chester Szatkowski
 
 %% Optional overhead
-clear; % Clear the workspace
+clear all; % Clear the workspace
 close all; % Close all windows
 
 %% Optimization settings
@@ -44,12 +44,12 @@ end
 % Run your implementation of SQP algorithm. See mysqp.m
 solution = mysqp(f, df, g, dg, x0, opt);
 
-%% Report
-report(solution,f,g);
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%% Show solutions
+answX = solution.x(:,end)
+answG = g(solution.x(:,end))
+answF = f(solution.x(:,end))
  
+%% Functions
 
 %%%%%%%%%%%%%% Sequential Quadratic Programming Implementation with BFGS %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%% By Max Yi Ren and Emrah Bayrak %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
